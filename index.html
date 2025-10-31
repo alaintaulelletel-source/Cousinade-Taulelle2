@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" >
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <title>Cousinade — Famille Taulelle</title>
+  <meta name="description" content="Site officiel de la cousinade des Taulelle — inscriptions, programme, infos pratiques, galerie et contact." >
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">T</div>
+        <div>
+          <div style="font-weight:700">Cousinade — Famille Taulelle</div>
+          <div style="font-size:13px;color:var(--muted)">samedi 21 août 2027 · Les Taulelles</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#programme">Programme</a>
+        <a href="#inscription">S'inscrire</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#infos">Infos pratiques</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero card" id="accueil">
+      <div class="hero-left">
+        <div class="kicker">Cousinade 2027</div>
+        <h1>Retrouvons-nous — Famille Taulelle</h1>
+        <p class="lead">Un week-end chaleureux pour célébrer nos liens, partager des souvenirs et créer de nouveaux moments ensemble.</p>
+        <div class="cta">
+          <button class="btn" onclick="document.getElementById('inscription').scrollIntoView({behavior:'smooth'})">Je m'inscris</button>
+          <button class="btn ghost" onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">Voir le programme</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="card">
+          <strong style="font-size:15px">Détails rapides</strong>
+          <div class="small">📅 Dates : <strong>samedi 21 août 2027</strong></div>
+          <div class="small">📍 Lieu : <strong>Les Taulelles</strong></div>
+          <div class="small">👥 Participants attendus : <strong>~1000</strong></div>
+          <div style="margin-top:8px"><a href="#inscription" class="small">→ S'inscrire / Participer</a></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main>
+        <!-- Programme -->
+        <section class="card section" id="programme">
+          <h2>Programme</h2>
+          <div class="program">
+            <div class="item"><div class="date">Samedi matin</div><div><strong>Accueil & brunch</strong><div class="small">Installation et café d'accueil.</div></div></div>
+            <div class="item"><div class="date">Samedi après-midi</div><div><strong>Jeux & randonnée</strong><div class="small">Activités sportives et jeux familiaux.</div></div></div>
+            <div class="item"><div class="date">Samedi soir</div><div><strong>Dîner & soirée dansante</strong><div class="small">Repas festif suivi d'une soirée animée.</div></div></div>
+            <div class="item"><div class="date">Dimanche</div><div><strong>Brunch & départ</strong><div class="small">Clôture conviviale avec distribution d'album photo.</div></div></div>
+          </div>
+        </section>
+
+        <!-- Galerie -->
+        <section class="card section" id="galerie">
+          <h2>Galerie & Souvenirs</h2>
+          <div class="gallery" id="gallery">
+            <img src="images/photo1.jpg" alt="Photo 1">
+            <img src="images/photo2.jpg" alt="Photo 2">
+            <img src="images/photo3.jpg" alt="Photo 3">
+          </div>
+          <form style="margin-top:10px" id="uploadForm">
+            <label>Ajouter une photo souvenir :
+              <input type="file" accept="image/*" id="photoInput">
+            </label>
+            <button type="button" class="btn" style="margin-top:6px" onclick="uploadPhoto()">Ajouter</button>
+          </form>
+        </section>
+
+        <!-- Infos pratiques -->
+        <section class="card section" id="infos">
+          <h2>Infos pratiques</h2>
+          <ul class="small">
+            <li><strong>Hébergement :</strong> Chambres et gîtes sur place.</li>
+            <li><strong>Repas :</strong> Camions de nourriture sur place y compris boissons froides et chaudes</li>
+            <li><strong>Accès :</strong> Gares les plus proche : NIMES, ALES, AVIGNON.</li>
+            <li><strong>Contact :</strong> <a href="mailto:taulellecousinade@example.com">taulellecousinade@example.com</a></li>
+          </ul>
+          <div style="margin-top:12px">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17115.45405157205!2d4.3619546493719525!3d44.29352739641552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1761842667078!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <!--  style="border:0;width:100%;height:250px;border-radius:8px"></iframe>-->
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="card section" id="contact">
+          <h2>Contact</h2>
+          <form id="contact-form" onsubmit="handleContact(event)">
+            <label>Nom complet
+              <input type="text" id="contact-name" required>
+            </label>
+            <label>Email
+              <input type="email" id="contact-email" required>
+            </label>
+            <label>Message
+              <textarea id="contact-message"></textarea>
+            </label>
+            <button type="submit" class="btn" style="margin-top:8px">Envoyer</button>
+            <p id="contact-msg" class="small" style="margin-top:10px;color:green;display:none">Merci — votre message est enregistré.</p>
+          </form>
+        </section>
+      </main>
+
+      <!-- Inscription RSVP -->
+      <aside>
+        <div class="card section" id="inscription">
+          <h3>Inscription / RSVP</h3>
+          <form id="rsvp-form" onsubmit="handleRSVP(event)">
+            <label>Nom complet<input type="text" id="name" required></label>
+            <label>Email<input type="email" id="email" required></label>
+            <label>Nombre de personnes
+              <select id="attendees">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
+              </select>
+            </label>
+            <label>Jours de présence
+              <input type="checkbox" id="day1"> Samedi
+            </label>
+			<label>Jours de présence
+              <input type="checkbox" id="day2"> Dimanche
+            </label>
+            <label>Commentaires<textarea id="notes"></textarea></label>
+            <button type="submit" class="btn" style="margin-top:8px">Envoyer</button>
+          </form>
+          <p id="form-msg" class="small" style="margin-top:10px;color:green;display:none">
+            Merci — votre réponse est enregistrée.
+          </p>
+		  
+		   <hr style="margin:14px 0">
+          <div><strong class="small">Participation aux frais :</strong>
+            <p class="small">Contribuez via <a href="https://www.leetchi.com" target="_blank">Leetchi</a>.</p>
+          </div>
+		  
+		  
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="small">© <span id="year"></span> Cousinade Famille Taulelle. Site prototype.</div>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
