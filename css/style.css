@@ -5,8 +5,13 @@
 }
 
 /* Reset et base */
+/*
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:#111;line-height:1.45}
+.container{max-width:var(--maxw);margin:28px auto;padding:24px}
+*/
+*{box-sizing:border-box}
+body{margin:0;background-image: url("d:/fond.jpg");color:#111;line-height:1.45}
 .container{max-width:var(--maxw);margin:28px auto;padding:24px}
 
 /* Header */
